@@ -1,0 +1,71 @@
+
+package.json:
+
+    {
+      "name": "webpack-demo",
+      "version": "1.0.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        /**
+        * 增加一些参数--config webpack.config.js  --progress --display-modules --colors --display-reason
+        * 如果给配置文件webpack.config.js改个名字  运行webpack就不行了 因为默认寻找webpack.config.js文件进行配置
+        * 可以在此定义一份脚本 运行  npm run webpack 进行运行
+        * 下面的webpack.config.js自己的配置文件可以更改命名 后面是一些打包进程 打包模块 打包字体颜色 打包原因
+        */
+        "webpack":"webpack --config webpack.config.js --progress --display-modules --colors --display-reason"
+      },
+      "author": "",
+      "license": "ISC",
+      "devDependencies": {
+        "webpack": "^1.13.2"
+      }
+    }
+
+    webpack.config.js配置文件
+
+    module.exports = {
+        entry:'./src/script/main.js',
+        output:{
+            path:'./dist/js',
+            filename:'bundle.js'
+        }
+    }*/
+
+    /**
+     * webpack配置entry和output
+     */
+    /*
+    module.exports = {
+        entry:['./src/script/a.js','./src/script/b.js'],
+        output:{
+            path:'./dist/js',
+            filename:'bundle.js'
+        }
+    }*/
+    /*module.exports = {
+        entry:{
+            a:'./src/script/a.js',
+            b:'./src/script/b.js'
+        },
+        output:{
+            path:'./dist/js',
+            filename:'bundle.js'
+        }
+    }*/
+    /*
+    module.exports = {
+        entry:{
+            a:'./src/script/a.js',
+            b:'./src/script/b.js'
+        },
+        output:{
+            path:'./dist/js',
+            filename:'[name].js'
+            //filename:'[name]-[hash].js'
+            //filename:'[name]-[chunkhash].js'  //每次打包hash值只有更改的文件才会改变 不更改不会改变
+        }
+    }*/
+
+html-webpack-plugin插件使用
